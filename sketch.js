@@ -1,6 +1,3 @@
-// Daniel Shiffman
-// https://thecodingtrain.com/CodingChallenges/024-perlinnoiseflowfield.html
-
 let inc = 0.1;
 let scl = 10;
 let cols, rows;
@@ -24,7 +21,7 @@ function setup() {
 
   flowfield = new Array(cols * rows);
 
-  for (let i = 0; i < 1000; i++) {
+  for (let i = 0; i < 3000; i++) {
     particles[i] = new Particle();
   }
   background(240);
@@ -44,7 +41,7 @@ function draw() {
     }
     yoff += inc;
 
-    zoff += 0.0004;
+    zoff += 0.00008;
   }
 
   for (let i = 0; i < particles.length; i++) {
@@ -53,4 +50,14 @@ function draw() {
     particles[i].edges();
     particles[i].show();
   }
+}
+
+function windowResized() {
+  canvasWidth = window.innerWidth;
+  canvasHeight = window.innerHeight;
+  resizeCanvas(canvasWidth, canvasHeight);
+  cols = floor(width / scl);
+  rows = floor(height / scl);
+  flowfield = new Array(cols * rows);
+  background(240);
 }
