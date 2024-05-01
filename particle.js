@@ -8,7 +8,7 @@ class Particle {
     this.pos = createVector(random(width), random(height));
     this.vel = createVector(0, 0);
     this.acc = createVector(0, 0);
-    this.maxspeed = 4;
+    this.maxspeed = 3;
     this.prevPos = this.pos.copy();
   }
 
@@ -32,7 +32,7 @@ class Particle {
   }
 
   show() {
-    stroke(255, 10, 100);
+    stroke(255, 50);
     strokeWeight(1);
     line(this.pos.x, this.pos.y, this.prevPos.x, this.prevPos.y);
     this.updatePrev();

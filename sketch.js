@@ -13,18 +13,21 @@ let particles = [];
 
 let flowfield;
 
+let canvasWidth = window.innerWidth;
+let canvasHeight = window.innerHeight;
+
 function setup() {
-  createCanvas(1600, 900);
+  createCanvas(canvasWidth, canvasHeight);
   cols = floor(width / scl);
   rows = floor(height / scl);
   fr = createP("");
 
   flowfield = new Array(cols * rows);
 
-  for (let i = 0; i < 1000; i++) {
+  for (let i = 0; i < 50; i++) {
     particles[i] = new Particle();
   }
-  background(51);
+  background(40);
 }
 
 function draw() {
