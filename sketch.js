@@ -24,10 +24,10 @@ function setup() {
 
   flowfield = new Array(cols * rows);
 
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 1000; i++) {
     particles[i] = new Particle();
   }
-  background(40);
+  background(240);
 }
 
 function draw() {
@@ -41,17 +41,10 @@ function draw() {
       v.setMag(1);
       flowfield[index] = v;
       xoff += inc;
-      stroke(0, 50);
-      // push();
-      // translate(x * scl, y * scl);
-      // rotate(v.heading());
-      // strokeWeight(1);
-      // line(0, 0, scl, 0);
-      // pop();
     }
     yoff += inc;
 
-    zoff += 0.0003;
+    zoff += 0.0004;
   }
 
   for (let i = 0; i < particles.length; i++) {
@@ -60,6 +53,4 @@ function draw() {
     particles[i].edges();
     particles[i].show();
   }
-
-  // fr.html(floor(frameRate()));
 }
