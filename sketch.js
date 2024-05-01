@@ -21,7 +21,7 @@ function setup() {
 
   flowfield = new Array(cols * rows);
 
-  for (let i = 0; i < 3000; i++) {
+  for (let i = 0; i < 1500; i++) {
     particles[i] = new Particle();
   }
   background(240);
@@ -41,7 +41,7 @@ function draw() {
     }
     yoff += inc;
 
-    zoff += 0.00008;
+    zoff += 0.0001;
   }
 
   for (let i = 0; i < particles.length; i++) {
