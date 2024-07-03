@@ -21,7 +21,7 @@ function setup() {
 
   flowfield = new Array(cols * rows);
 
-  for (let i = 0; i < 1500; i++) {
+  for (let i = 0; i < 2000; i++) {
     particles[i] = new Particle();
   }
   background(240);
