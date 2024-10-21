@@ -1,3 +1,5 @@
+import {PARTICLES} from "../constants/index.js"
+
 let inc = 0.1;
 let scl = 10;
 let cols, rows;
@@ -21,7 +23,7 @@ function setup() {
 
   flowfield = new Array(cols * rows);
 
-  for (let i = 0; i < 3000; i++) {
+  for (let i = 0; i < PARTICLES; i++) {
     particles[i] = new Particle();
   }
   background(240);
